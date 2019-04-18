@@ -1,10 +1,12 @@
 import React from 'react';
 
+import ContentTableItem from './content-table-item';
+
 const ContentTable = () => {
   return (
     <table>
       <tr>
-        <td>ID</td>
+        <td><ContentTableItem /></td>
         <td>Город</td>
         <td>Название</td>
         <td>Выполнить до</td>
