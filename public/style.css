@@ -1,21 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  font-family: 'PT Sans', sans-serif;
  }
 
 a {
-  color: #6E6D6D;
+  color: #666666;
   text-decoration: none;
 }
+
+a:hover {
+  color: #dddddd;
+}
+
+/* Header */
 
 .header {
   display: flex;
   justify-content: space-between;
-  background: #1C1C1C;
   color: #fff;
-  font-family: 'PT Sans', sans-serif;
+}
+
+.header__background {
+  background: #222222;
 }
 
 .header__section {
@@ -25,21 +35,109 @@ a {
 
 .header__item {
   padding: 15px 15px 20px;
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 5px;
 }
 
+.header__item__color {
+  color: #fff;
+}
+
+.header__item__balance {
+  color: #666666;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.header__item__bold {
+  font-weight: 600;
+}
+
+.header__item__notifications {
+  background-image: url(./assets/ic-notifications-black-24-px.svg);
+  background-size: contain 40px;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  padding-right: 2px;
+}
+
+.header__notification__badge {
+  position:relative;
+}
+
+.header__notification__badge[data-badge]:after {
+  content:attr(data-badge);
+  position:absolute;
+  top: 0px;
+  right: -1px;
+  font-size:.7em;
+  background: #ff6633;
+  color:white;
+  width:6px;
+  height:6px;
+  text-align:center;
+  line-height:18px;
+  border-radius:50%;
+  box-shadow:0 0 1px #333;
+}
+
+.header__item__help {
+  background-image: url(./assets/ic-help-outline-24-px-copy-3.svg);
+  background-size: contain 40px;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+
 .headerlogo {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 900;
   letter-spacing: 2px;
   color: white;
-  margin-right: 10px;
-  margin-bottom: 5px;
+  margin-right: 15px;
+  margin-bottom: 7px;
+
 }
 
 .headerButton {
   cursor: pointer;
+}
+
+.header__select {
+  width: 155px;
+  overflow:hidden;
+  background: url(./assets/triangle.svg) no-repeat right;
+  background-size: 6px;
+  margin-right: 15px;
+}
+
+.header__select select {
+  width: 155px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  border: 0px solid #ffffff;
+}
+
+.header__select select::before {
+  box-shadow: #66666650;
+  border: 0px solid #ffffff;
+}
+.header__select select:focus {
+  outline: none;
+}
+
+.header__select select option {
+  color: black;
+}
+
+.header__select.slate {
+  color: #666666;
 }
 
 :root {
@@ -50,4 +148,13 @@ a {
   --white: #ffffff;
   --pinkish-grey: #cccccc;
   --brownish-grey: #666666;
+}
+
+button {
+  border: 0px solid transparent;
+  background-color: transparent;
+}
+
+button:focus {
+  outline: none;
 }

@@ -10,17 +10,20 @@ import ContentTable from './components/content-table';
 
 const App = () => {
   return (
-    <div className="container">
-      <div className="header">
-      <HeaderMenuLinks />
-      <HeaderMenuInfo />
+    <div>
+      <div className="header__background">
+        <div className="header container">
+          <HeaderMenuLinks />
+          <HeaderMenuInfo />
+        </div>
       </div>
       
+      <div className="container">
       <ContentTitle />
       <ContentMenu />
       <ContentFilter />
       <ContentTable />
-    </div>
+    </div></div>
   );
 ;}
 
