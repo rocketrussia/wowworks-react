@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import HeaderLogo from './components/header-logo';
 import HeaderMenuLinks from './components/header-menu-links';
 import HeaderMenuInfo from './components/header-menu-info';
 import ContentTitle from './components/content-title';
@@ -11,10 +10,12 @@ import ContentTable from './components/content-table';
 
 const App = () => {
   return (
-    <div class="container">
-      <HeaderLogo />
+    <div className="container">
+      <div className="header">
       <HeaderMenuLinks />
       <HeaderMenuInfo />
+      </div>
+      
       <ContentTitle />
       <ContentMenu />
       <ContentFilter />

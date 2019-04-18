@@ -1,12 +1,12 @@
 import React from 'react';
 
 const HeaderMenuInfo = () => {
-  return (<ul>
-      <li>Баланс <span>218 982,90 ₽</span></li>
-      <li><select><option>Уведомления</option></select></li>
-      <li><select><option>Никита Ласточкин</option></select></li>
-      <li>FAQ</li>
-    </ul>);
+  return (<div className="header__section">
+      <div className="header__item headerButton">Баланс <span>218 982,90 ₽</span></div>
+      <div className="header__item headerButton">Bell Icon</div>
+      <div className="header__item headerButton"><select><option>Никита Ласточкин</option></select></div>
+      <div className="header__item headerButton">FAQ Icon</div>
+    </div>);
 };
 
 export default HeaderMenuInfo;
