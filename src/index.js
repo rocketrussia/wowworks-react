@@ -17,10 +17,9 @@ const App = () => {
           <HeaderMenuInfo />
         </div>
       </header>
-      
-      <div className="container">
       <ContentTitle />
       <ContentMenu />
+      <div className="container">
       <ContentFilter />
       <ContentTable />
     </div></div>
