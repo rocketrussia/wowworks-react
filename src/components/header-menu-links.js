@@ -3,11 +3,15 @@ import React from 'react';
 const HeaderMenuLinks = () => {
   return (
     <div className="header__section">
-      <div className="header_item headerlogo headerButton">taskon</div>
-      <div className="header__item headerButton"><a href="/" className="header__item__color">Задания</a></div>
-      <div className="header__item headerButton"><a href="/">Финансы</a></div>
-      <div className="header__item headerButton"><a href="/">Компания</a></div>
-      <div className="header__item headerButton"><a href="/">Статистика</a></div>
+      <label htmlFor="toggle">&#9776;</label>
+      <input type="checkbox" id="toggle"></input>
+
+      <div className="header__item headerlogo headerButton">taskon</div>
+      
+      <div className="header__item headerButton header__menulinks"><a href="/" className="header__item__color">Задания</a></div>
+      <div className="header__item headerButton header__menulinks"><a href="/">Финансы</a></div>
+      <div className="header__item headerButton header__menulinks"><a href="/">Компания</a></div>
+      <div className="header__item headerButton header__menulinks"><a href="/">Статистика</a></div>
     </div>
   );
 };

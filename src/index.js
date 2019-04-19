@@ -11,12 +11,12 @@ import ContentTable from './components/content-table';
 const App = () => {
   return (
     <div>
-      <div className="header__background">
+      <header className="header__background">
         <div className="header container">
           <HeaderMenuLinks />
           <HeaderMenuInfo />
         </div>
-      </div>
+      </header>
       
       <div className="container">
       <ContentTitle />

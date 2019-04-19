@@ -5,6 +5,7 @@
   padding: 0;
   text-decoration: none;
   font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
  }
 
 a {
@@ -14,6 +15,39 @@ a {
 
 a:hover {
   color: #dddddd;
+}
+
+button {
+  border: 0px solid transparent;
+  background-color: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
+#toggle {
+  display: none;
+}
+
+/* Grid */
+
+.container {
+  width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+label {
+  font-size: 20px;
+  line-height: 70px;
+  display: none;
 }
 
 /* Header */
@@ -86,6 +120,7 @@ a:hover {
   background-size: contain 40px;
   background-repeat: no-repeat;
   margin-top: 10px;
+  padding-right: 5px;
 }
 
 .headerlogo {
@@ -93,9 +128,8 @@ a:hover {
   font-weight: 900;
   letter-spacing: 2px;
   color: white;
-  margin-right: 15px;
-  margin-bottom: 7px;
-
+  padding-left: 0px;
+  margin: 0px;
 }
 
 .headerButton {
@@ -140,21 +174,92 @@ a:hover {
   color: #666666;
 }
 
-:root {
-  --pinkish-orange: #ff6633;
-  --black: #222222;
-  --warm-grey: #999999;
-  --white: #dddddd;
-  --white: #ffffff;
-  --pinkish-grey: #cccccc;
-  --brownish-grey: #666666;
+/* Content Page Menu */
+
+
+
+/* Filter Content */
+
+
+
+/* Table Content */
+
+
+/* Media */
+
+@media screen and (max-width: 1180px) {
+  .container {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__section:last-child {
+    border-top: 1px solid #333333;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
-button {
-  border: 0px solid transparent;
-  background-color: transparent;
+@media screen and (max-width: 768px) {
+  .header__section:first-child{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .header__item {
+    margin-left: 0;
+  }
+
+  .headerlogo {
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .header__menulinks {
+    border-top: 1px solid #333333;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    display: none;
+    overflow: hidden;
+  }
+
+  .header__menulinks a {
+    display: block;
+    width: 100%;
+    justify-content: center;
+  }
+
+  label {
+    display: inline;
+    cursor: pointer;
+    float: right;
+    padding-right: 20px;
+  }
+  
+  #toggle:checked ~ .header__menulinks {
+    display: block;
+    
+  }
 }
 
-button:focus {
-  outline: none;
+@media screen and (max-width: 400px) { 
+  .header__item__bold {
+    display: block;
+  }
+
+  
 }
