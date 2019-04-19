@@ -5,6 +5,7 @@ import ContentTableItem from './content-table-item';
 const ContentTable = () => {
   return (
     <table>
+      <tbody>
       <tr>
         <td><ContentTableItem /></td>
         <td>Город</td>
@@ -40,6 +41,7 @@ const ContentTable = () => {
         <td>13 августа</td>
         <td>150 799 ₽</td>
       </tr>
+      </tbody>
     </table>
   );
 };
