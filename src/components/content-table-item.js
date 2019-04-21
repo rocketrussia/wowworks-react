@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContentTableItem = () => {
   return (
-  <span>ID</span>
+  <span>12564</span>
   );
 };
 

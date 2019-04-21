@@ -2,13 +2,13 @@ import React from 'react';
 
 const ContentFilter= () => {
   return (
-    <ul>
-      <li><input type="text" placeholder="Поиск по слову"></input></li>
-      <li><input type="checkbox" value="false"></input>Персональное</li>
-      <li><input type="checkbox" value="false"></input>Ночное</li>
-      <li><input type="checkbox" value="false"></input>Срочное</li>
-      <li><select><option>Никита Ласточкин</option></select></li>
-    </ul>
+    <div className="container content__filter">
+      <input type="text" placeholder="Поиск по слову"></input>
+      <input type="checkbox" className="content__filter__checkbox"></input><span className="content__filter__checkmark">Персональное</span>
+      <input type="checkbox" className="content__filter__checkbox"></input><span className="content__filter__checkmark">Ночное</span>
+      <input type="checkbox" className="content__filter__checkbox"></input><span className="content__filter__checkmark">Срочное</span>
+      <div className="content__select"><select><option>Никита Ласточкин</option></select></div>
+    </div>
   );
 };
 

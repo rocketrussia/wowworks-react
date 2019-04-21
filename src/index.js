@@ -19,10 +19,9 @@ const App = () => {
       </header>
       <ContentTitle />
       <ContentMenu />
-      <div className="container">
       <ContentFilter />
       <ContentTable />
-    </div></div>
+    </div>
   );
 ;}
 
