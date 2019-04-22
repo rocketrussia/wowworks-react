@@ -4,7 +4,7 @@ import ContentTableItem from './content-table-item';
 
 const ContentTable = () => {
   return (
-    <div className="container">
+    <div className="container content__table">
     <table>
       <tbody>
       <tr>
