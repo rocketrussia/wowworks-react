@@ -13,7 +13,7 @@ const ContentMenu = () => {
           <li>Черновики<span className="content__menu__span">7</span></li>
         </ul>
       <label className="content__menu__circle">
-      <img src="%PUBLIC_URL%/assets/ic_speeddial_white_24dp_2x.png" alt="" />
+      <img src="./assets/ic_speeddial_white_24dp_2x.png" alt="" />
       </label>
       </div><div className="content__menu__background__line"></div>
       
