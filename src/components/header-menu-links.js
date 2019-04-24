@@ -3,7 +3,7 @@ import React from 'react';
 const HeaderMenuLinks = () => {
   return (
     <div className="header__section">
-      <label htmlFor="toggle">&#9776;</label>
+      <label htmlFor="toggle" className="burger">&#9776;</label>
       <input type="checkbox" id="toggle"></input>
 
       <div className="header__item headerlogo headerButton">taskon</div>
