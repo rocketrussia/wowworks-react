@@ -14,6 +14,11 @@ export default class ApiService {
 
   async getNewTask() {
     const res = await this.getResource(`new-tasks.json`);
-    return res.new_tasks[3];
+    return res.new_tasks;
   }
 }
+
+// .then((item) => {
+//   const [...itemProps] = item; 
+//   return [...itemProps];
+// });
