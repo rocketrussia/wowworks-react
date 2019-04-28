@@ -14,24 +14,32 @@ class App extends Component {
   apiService = new ApiService();
 
   state = {
-    tableData: []
-  }
+    tableData: [],
+  };
 
   constructor() {
     super();
     this.updateTable();
-  }
+  };
+
+  onError = (err) => {
+    this.setState({
+      tableData: [
+        { "text": "Сервер недоступен. Попробуйте зайти позже" }
+      ]
+    });
+  };
 
   updateTable() {
     this.apiService
       .getNewTask()
       .then(task => {
-        return this.setState({tableData: task})});
-  }
+        return this.setState({tableData: task})})
+      .catch(this.onError);
+  };
 
   render() {
     const { tableData } = this.state;
-
     return (
       <div>
         <header className="header__background">
