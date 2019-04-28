@@ -4,7 +4,6 @@ import ContentTableItem from './content-table-item';
 const ContentTable = ({ tasks }) => {
 
   const elements = tasks.map((item) => {
-
     return (
           <ContentTableItem
           {...item}
@@ -24,7 +23,6 @@ const ContentTable = ({ tasks }) => {
         <th>Выполнить до</th>
         <th>Сумма</th>
       </tr>
-      { console.log(elements) }
       { elements }
       </tbody>
     </table>

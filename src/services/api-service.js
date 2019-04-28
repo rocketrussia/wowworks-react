@@ -17,8 +17,3 @@ export default class ApiService {
     return res.new_tasks;
   }
 }
-
-// .then((item) => {
-//   const [...itemProps] = item; 
-//   return [...itemProps];
-// });
