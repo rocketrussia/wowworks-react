@@ -232,11 +232,23 @@ label {
   padding: 2px 6px;
 }
 
+.content__menu a {
+  color: #999999;
+}
+
+.content__menu a:hover {
+  color: #ff6633;
+}
+
 .content__menu__chosen {
   position: relative;
   bottom: -1px;
   padding-bottom: 20px;
   border-bottom: 1px solid #ff6633;
+}
+
+.content__menu__chosen a {
+  color: black;
 }
 
 .content__menu__circle {
