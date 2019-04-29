@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const HeaderMenuLinks = () => {
   return (
@@ -8,10 +9,10 @@ const HeaderMenuLinks = () => {
 
       <div className="header__item headerlogo headerButton">taskon</div>
       
-      <div className="header__item headerButton header__menulinks"><a href="/" className="header__item__color">Задания</a></div>
-      <div className="header__item headerButton header__menulinks"><a href="/">Финансы</a></div>
-      <div className="header__item headerButton header__menulinks"><a href="/">Компания</a></div>
-      <div className="header__item headerButton header__menulinks"><a href="/">Статистика</a></div>
+      <div className="header__item"><NavLink activeClassName="header__item__color" to="/"exact={true}>Задания</NavLink></div>
+      <div className="header__item"><NavLink activeClassName="header__item__color" to="/finance">Финансы</NavLink></div>
+      <div className="header__item"><NavLink activeClassName="header__item__color" to="/company">Компания</NavLink></div>
+      <div className="header__item"><NavLink activeClassName="header__item__color" to="/stats">Статистика</NavLink></div>
     </div>
   );
 };

@@ -2,45 +2,20 @@ import React, { Component } from 'react';
 
 import HeaderMenuLinks from './header-menu-links';
 import HeaderMenuInfo from './header-menu-info';
-import ContentTitle from './content-title';
-import ContentMenu from './content-menu';
-import ContentFilter from './content-filter';
-import ContentTable from './content-table';
 
-import ApiService from '../services/api-service';
+import MainPage from './main-page';
+import FinancePage from './finance-page';
+import CompanyPage from './company-page';
+import StatsPage from './stats-page';
+
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
-
-  apiService = new ApiService();
-
-  state = {
-    tableData: [],
-  };
-
-  constructor() {
-    super();
-    this.updateTable();
-  };
-
-  onError = (err) => {
-    this.setState({
-      tableData: [
-        { "text": "Сервер недоступен. Попробуйте зайти позже" }
-      ]
-    });
-  };
-
-  updateTable() {
-    this.apiService
-      .getNewTask()
-      .then(task => {
-        return this.setState({tableData: task})})
-      .catch(this.onError);
-  };
-
+  
   render() {
-    const { tableData } = this.state;
+
     return (
+      <Router basename="/wowworks-react">
       <div>
         <header className="header__background">
           <div className="header container">
@@ -48,11 +23,15 @@ class App extends Component {
             <HeaderMenuInfo />
           </div>
         </header>
-        <ContentTitle />
-        <ContentMenu />
-        <ContentFilter />
-        <ContentTable tasks={tableData}/>
+        <Switch>
+          <Route path="/" component={MainPage} exact={true} />
+          <Route path="/finance" component={FinancePage} />
+          <Route path="/company" component={CompanyPage} />
+          <Route path="/stats" component={StatsPage} />
+          <Redirect to="/" />
+        </Switch>
       </div>
+      </Router>
       );
   };
 };
