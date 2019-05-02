@@ -328,6 +328,7 @@ input[type="checkbox"]:checked + label:before {
   content: '\02714';
   color: green;
   text-align: center;
+  line-height: 13px;
   font-size: 10px;
   font-weight: 400;
   position: relative;

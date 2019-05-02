@@ -13,7 +13,8 @@ export default class MainPage extends Component {
 
   state = {
     tableData: [],
-    term: ''
+    term: '',
+    filter: { personal: false, night: false, quick: false }
   };
 
   constructor() {
@@ -41,10 +42,22 @@ export default class MainPage extends Component {
     this.setState({ term });
   }
 
+  onPersonalChange = (filter) => {
+    this.setState({ filter });
+  }
+
+  onNightChange = (filter) => {
+    this.setState({ filter });
+  }
+
+  onQuickChange = (filter) => {
+    this.setState({ filter });
+  }
+
   search(items, term) {
     if (term.length === 0) {
       return items;
-    }
+    };
 
     return items.filter((item) => {
       const keys = [item.id, item.city, item.text, item.date];
@@ -53,17 +66,50 @@ export default class MainPage extends Component {
     }); 
   };
 
-  render() {
-    const { tableData, term } = this.state;
+  filter(items, filter) {
+    
+    if (filter.personal === true && filter.night === true && filter.quick === true) {
+      return items.filter((item) => {
+        return item.personal === 'true' && item.night === 'true' && item.quick === 'true';
+      });
+    };
+    
+    if (filter.personal === true) {
+      return items.filter((item) => {
+        return item.personal === 'true';
+      });
+    };
 
-    const visibleItems = this.search(tableData, term);
+    if (filter.night === true) {
+      return items.filter((item) => {
+        return item.night === 'true';
+      });
+    };
+
+    if (filter.quick === true) {
+      return items.filter((item) => {
+        return item.quick === 'true';
+      });
+    };
+
+    return items;
+  };
+
+  render() {
+    const { tableData, term, filter } = this.state;
+    console.log(filter);
+    const visibleItems = this.filter(this.search(tableData, term), filter);
     return (
       <div>
         <ContentTitle />
         <ContentMenu />
         <div className="container">
-          <ContentSearch onSearchChange={this.onSearchChange}/>
-          <ContentFilter />
+          <ContentSearch onSearchChange={this.onSearchChange} />
+          <ContentFilter 
+          onPersonalChange={this.onPersonalChange}
+          onNightChange={this.onNightChange}
+          onQuickChange={this.onQuickChange}
+          />
         </div>
         <ContentTable tasks={visibleItems} />
       </div>
