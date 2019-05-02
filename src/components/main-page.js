@@ -67,10 +67,27 @@ export default class MainPage extends Component {
   };
 
   filter(items, filter) {
-    
     if (filter.personal === true && filter.night === true && filter.quick === true) {
       return items.filter((item) => {
         return item.personal === 'true' && item.night === 'true' && item.quick === 'true';
+      });
+    };
+
+    if (filter.personal === true && filter.night === true) {
+      return items.filter((item) => {
+        return item.personal === 'true' && item.night === 'true';
+      });
+    };
+
+    if (filter.personal === true && filter.quick === true) {
+      return items.filter((item) => {
+        return item.personal === 'true' && item.quick === 'true';
+      });
+    };
+
+    if (filter.night === true && filter.quick === true) {
+      return items.filter((item) => {
+        return item.night === 'true' && item.quick === 'true';
       });
     };
     
