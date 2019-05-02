@@ -298,6 +298,7 @@ input[type=text] {
   border-radius: 2px;
   font-size: 14px;
   margin-right: 30px;
+  margin-bottom: 40px;
 }
 
 input[type="checkbox"] {
@@ -334,7 +335,7 @@ input[type="checkbox"]:checked + label:before {
 }
 
 .content__filter {
-  margin-bottom: 40px;
+  display: inline;
 }
 
 .content__filter li {
@@ -491,7 +492,16 @@ th {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 830px) {
+
+  input[type=text] {
+    margin: 0px;
+  }
+
+  input[type="checkbox"] + label {
+    padding-left: 20px;
+  }
+
   .content__filter {
     display: flex;
     flex-direction: column;
@@ -502,7 +512,7 @@ th {
     border-bottom: 1px solid #dddddd;
     padding-top: 10px;
     padding-bottom: 20px;
-    margin-right: 30px;
+    margin-right: 70px;
   }
 
   .content__filter__checkmark {
@@ -522,6 +532,10 @@ th {
     display: block; 
     font-size: 12px;
   }
+
+  table {
+    margin-top: 40px;
+  }
   
   th {
     display: none;
@@ -537,6 +551,7 @@ th {
 	tr { 
     border: 1px solid #eeeeee;
     margin-bottom: 10px;
+
    }
 
   tr:first-child {

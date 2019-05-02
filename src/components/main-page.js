@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import ContentTitle from './content-title';
 import ContentMenu from './content-menu';
+import ContentSearch from './content-search';
 import ContentFilter from './content-filter';
 import ContentTable from './content-table';
 
@@ -12,6 +13,7 @@ export default class MainPage extends Component {
 
   state = {
     tableData: [],
+    term: ''
   };
 
   constructor() {
@@ -35,14 +37,35 @@ export default class MainPage extends Component {
       .catch(this.onError);
   };
 
+  onSearchChange = (term) => {
+    this.setState({ term });
+  }
+
+  search(items, term) {
+    if (term.length === 0) {
+      return items;
+    }
+
+    return items.filter((item) => {
+      const keys = [item.id, item.city, item.text, item.date];
+      const str = keys.join(' ') + keys.join(' ').toLowerCase();
+      return str.indexOf(term) > -1;
+    }); 
+  };
+
   render() {
-    const { tableData } = this.state;
+    const { tableData, term } = this.state;
+
+    const visibleItems = this.search(tableData, term);
     return (
       <div>
         <ContentTitle />
         <ContentMenu />
-        <ContentFilter />
-        <ContentTable tasks={tableData}/>
+        <div className="container">
+          <ContentSearch onSearchChange={this.onSearchChange}/>
+          <ContentFilter />
+        </div>
+        <ContentTable tasks={visibleItems} />
       </div>
       );
   };
