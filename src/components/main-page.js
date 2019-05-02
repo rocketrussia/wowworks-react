@@ -48,8 +48,8 @@ export default class MainPage extends Component {
 
     return items.filter((item) => {
       const keys = [item.id, item.city, item.text, item.date];
-      const str = keys.join(' ') + keys.join(' ').toLowerCase();
-      return str.indexOf(term) > -1;
+      const str = keys.join(' ').toLowerCase();
+      return str.indexOf(term.toLowerCase()) > -1;
     }); 
   };
 
