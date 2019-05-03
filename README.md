@@ -4,11 +4,11 @@ https://github.com/wowworks-team/wowworks-frontend-test-task
 
 ## Getting Started
 The project is installed as a second directory:  
-./wowworks-react  
+    ./wowworks-react  
 For install, you need download repository. Open folder in IDE and write in terminal:  
-<><><><>npm install
+    npm install
 
-## Сonditional Scheme Application Tree
+## Application Tree Scheme
 App  
 --HeaderMenuLinks  
 --HeaderMenuInfo  
