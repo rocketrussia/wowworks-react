@@ -67,65 +67,21 @@ export default class MainPage extends Component {
   };
 
   filter(items, filter) {
-    // return items.filter((item) => {
-    //   return filter.personal === item.personal ? (item) : (null)
-    //   && filter.night === item.night ? (item) : (null)
-    //   && filter.quick === item.quick ? (item) : (null);
-    // });
+    return items.filter((item) => {
+      let count = 0;
+      if (item.personal && (filter.personal === true)) count+=1;
+      if (item.night && (filter.night === true)) count+=1;
+      if (item.quick && (filter.quick === true)) count+=1;
+      
+      let flags = 0;
+      if (filter.personal === true) flags+=1;
+      if (filter.night === true) flags+=1;
+      if (filter.quick === true) flags+=1;
+      
+      if (count === flags || flags === 0) return true;
 
-    if (filter.personal === true 
-      && filter.night === true 
-      && filter.quick === true) {
-      return items.filter((item) => {
-        return item.personal === true 
-        && item.night === true
-        && item.quick === true;
+      return null;
       });
-    };
-
-    if (filter.personal === true 
-      && filter.night === true) {
-      return items.filter((item) => {
-        return item.personal === true
-        && item.night === true;
-      });
-    };
-
-    if (filter.personal === true 
-      && filter.quick === true) {
-      return items.filter((item) => {
-        return item.personal === true
-        && item.quick === true;
-      });
-    };
-
-    if (filter.night === true 
-      && filter.quick === true) {
-      return items.filter((item) => {
-        return item.night === true 
-        && item.quick === true;
-      });
-    };
-    
-    if (filter.personal === true) {
-      return items.filter((item) => {
-        return item.personal === true;
-      });
-    };
-
-    if (filter.night === true) {
-      return items.filter((item) => {
-        return item.night === true;
-      });
-    };
-
-    if (filter.quick === true) {
-      return items.filter((item) => {
-        return item.quick === true;
-      });
-    };
-
-    return items;
   };
 
   render() {
