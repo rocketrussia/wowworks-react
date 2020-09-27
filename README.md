@@ -2,6 +2,8 @@
 This app is test project for wowworks in React
 https://github.com/wowworks-team/wowworks-frontend-test-task
 
+Demo: https://rocketstars.ru/wowworks-react/
+
 ## Getting Started
 The project is installed as a second directory:  
 ```./wowworks-react```  
